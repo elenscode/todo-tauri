@@ -8,7 +8,13 @@ const ToDoItem: FC<ToDo> = ({ id, completed, text, onDelete }) => {
     <div>
       <label className="flex gap-2 items-center">
         <input type="checkbox" data-id={id} defaultChecked={completed} />
-        <span className={completed ? "line-through" : ""}>{text}</span>
+        <span
+          className={`${
+            completed ? "line-through" : ""
+          } text-primary-light dark:text-primary-dark`}
+        >
+          {text}
+        </span>
         <button
           type="button"
           className="px-2 text-primary-light dark:text-primary-dark"

@@ -2,6 +2,7 @@ import { useState } from "react";
 // import { invoke } from "@tauri-apps/api/core";
 import { VscColorMode } from "react-icons/vsc";
 import ToDoList from "./component/ToDoList";
+import HeatmapComponent from "./component/HeatmapComponent";
 import "./index.css";
 
 export interface ToDo {
@@ -25,8 +26,13 @@ function App() {
 
   return (
     <main className={`h-screen ${darkMode ? "bg-gray-900" : "bg-white"}`}>
-      <h1>ToDo App</h1>
-      <ToDoList />
+      <h1 className="flex justify-center text-3xl text-black dark:text-white">
+        ToDo App
+      </h1>
+      <div className="flex justify-center items-center">
+        <ToDoList />
+      </div>
+
       <button
         type="button"
         onClick={toggleDarkMode}
@@ -34,6 +40,9 @@ function App() {
       >
         <VscColorMode />
       </button>
+      <div className="flex justify-center items-center">
+        <HeatmapComponent />
+      </div>
     </main>
   );
 }
